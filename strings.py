@@ -58,3 +58,33 @@ print(f'diamètre = {round(diametre, 1)}cm')
 # pour afficher des accolades, il faut les doubler
 # le caractère d'échappement d'une f-string est l'accolade
 print(f'{{stock}} {{diametre}}')
+print()
+
+print(text1)
+# longueur
+print(len(text1))
+# recherche
+print('foo' in text1)
+print(text1.find('foo')) # trouvé à la 7ème position
+print('baz' in text1)
+print(text1.find('baz')) # (par convention) position -1 == non trouvé
+# remplacement
+text1 = text1.replace('foo', 'baz')
+print(text1)
+
+text11 = 'foo foo foo'
+# on ne remplace qu'une seule occurence
+text11 = text11.replace('foo', 'baz', 1)
+print(text11)
+
+text12 = "lorem ipsum sit dolores"
+# sélection d'un caractère par son index
+print(text12[3])
+# sélection d'une suite de caractères par leur index,
+# du 6ème inclus au 11ème exclus
+print(text12[6:11])
+# remplacer ipsum par baz sans utiliser str.replace()
+# sélection du début au 6ème caractère exclus
+# + baz
+# + sélection du 11ème caractère au dernier
+print(text12[:6] + 'baz' + text12[11:])
