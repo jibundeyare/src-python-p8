@@ -58,5 +58,3 @@ print(f'diamètre = {round(diametre, 1)}cm')
 # pour afficher des accolades, il faut les doubler
 # le caractère d'échappement d'une f-string est l'accolade
 print(f'{{stock}} {{diametre}}')
-
-# lorem ipsum
