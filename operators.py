@@ -143,6 +143,17 @@ print(not (total >= 100 and point_fidelite >= 10))
 # True  False
 # False True
 
+# A     B       A xor B
+# False False   False
+# False True    True
+# True  False   True
+# True  True    False
+
+# 1000001 A (65)
+# 1100001 a (97)
+# 0100000 A xor a == espace (32)
+# 1000001 SP xor a == A (65)
+
 # opérateurs etc
 
 # inclusion
