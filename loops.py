@@ -1,3 +1,5 @@
+import random
+
 # boucle == structure itérative
 
 # boucle infinie
@@ -98,3 +100,12 @@ for name in names:
             vowels += 1
 
 print('vowels:', vowels)
+
+# exo converion degré celsius vers degré fahrenheit
+# temperature_f = (temperature_c * 9/5) + 32
+n = 10
+temperatures_c = []
+for i in range(0, n):
+    temperatures_c.append(random.randint(-50, 300) / 10)
+
+print(temperatures_c)
