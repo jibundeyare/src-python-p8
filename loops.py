@@ -1,4 +1,5 @@
 import random
+from timeit import default_timer as timer
 
 # boucle == structure itérative
 
@@ -108,4 +109,52 @@ temperatures_c = []
 for i in range(0, n):
     temperatures_c.append(random.randint(-50, 300) / 10)
 
-print(temperatures_c)
+print('temperatures celsius:', temperatures_c)
+
+temperatures_f = []
+
+for temperature_c in temperatures_c:
+    # conversion celsius -> fahrenheit
+    temperatures_f.append((temperature_c * 9/5) + 32)
+
+print('temperatures fahrenheit:', temperatures_f)
+
+
+# start benchmark
+start = timer()
+
+for _ in range(0, 1000000):
+    # exo recherche températires négatives
+    negative_temperatures_c = []
+
+    for temperature_c in temperatures_c:
+        if temperature_c < 0:
+            # nous avons une température négative
+            negative_temperatures_c.append(temperature_c)
+
+    # print('temperatures c:', temperatures_c)
+    # print('negative temperatures c:', negative_temperatures_c)
+
+# stop benchmark
+end = timer()
+duration = end - start
+print('duration:', duration)
+
+# start benchmark
+start = timer()
+
+negative_temperatures_c = [None] * len(temperatures_c)
+
+for _ in range(0, 1000000):
+    for i in range(0, len(temperatures_c)):
+        if temperatures_c[i] < 0:
+            # nous avons une température négative
+            negative_temperatures_c[i] = temperatures_c[i]
+
+    # print('temperatures c:', temperatures_c)
+    # print('negative temperatures c:', negative_temperatures_c)
+
+# stop benchmark
+end = timer()
+duration = end - start
+print('duration:', duration)
