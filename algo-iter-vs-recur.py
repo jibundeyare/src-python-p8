@@ -48,6 +48,7 @@ def fibonacci_recur(n: int) -> int:
     return fibonacci_recur(n - 1) + fibonacci_recur(n - 2)
 
 class Cache:
+    # variable statique de classe
     data = {}
 
 def fibonacci_recur_memo(n: int) -> int:
